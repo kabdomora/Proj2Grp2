@@ -24,27 +24,20 @@ Recipe.init(
     instructions: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
-    category_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'category',
-        key: 'id',
-      }
-    },
-    rating_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'rating',
-        key: 'id'
-      }
-    },
-    user_id: {
-      type: DataTypes.INTEGER,
-      references: {
-        model: 'user',
-        key: 'id',
-      },
-    },
+    // category_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'category',
+    //     key: 'id',
+    //   }
+    // },
+    // user_id: {
+    //   type: DataTypes.INTEGER,
+    //   references: {
+    //     model: 'user',
+    //     key: 'id',
+    //   },
+    // },
   },
   {
     sequelize,
