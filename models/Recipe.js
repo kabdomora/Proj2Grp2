@@ -24,6 +24,13 @@ Recipe.init(
     instructions: {
       type: DataTypes.ARRAY(DataTypes.STRING),
     },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      }
+    },
     rating_id: {
       type: DataTypes.INTEGER,
       references: {

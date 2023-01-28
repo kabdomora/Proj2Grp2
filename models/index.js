@@ -3,7 +3,6 @@ const Category = require('./Category');
 const Rating = require('./Rating');
 const Recipe = require('./Recipe');
 const Review = require('./Review');
-const RecipeCategory = require('./RecipeCategory');
 
 
 User.hasMany(Recipe, {
@@ -15,18 +14,13 @@ Recipe.belongsTo(User, {
   foreignKey: 'user_id',
 });
 
-Recipe.hasMany(Category, {
-  through: {
-    model: RecipeCategory,
-    foreignKey: 'recipe_id',
-  },
+Recipe.hasOne(Category, {
+  foreignKey: 'category_id',
 });
 
-Category.belongsToMany(Recipe, {
-  through: {
-    model: RecipeCategory,
-    foreignKey: 'category_id',
-  },
+Category.belongsTo(Recipe, {
+  foreignKey: 'category_id',
+  onDelete: 'CASCADE',
 });
 
 Recipe.hasOne(Rating, {
@@ -46,4 +40,4 @@ Review.belongsTo(Recipe, {
   foreignKey: 'recipe_id',
 });
 
-module.exports = { User, Category, Rating, Recipe, Review, RecipeCategory };
+module.exports = { User, Category, Rating, Recipe, Review, };
