@@ -5,7 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fund My Project!</title>
-  <link rel="stylesheet" href="../../public/css/style.css">
+  {{!-- <link rel="stylesheet" href="../../public/css/style.css">     --}}
+  {{!-- This likely won't be needed --}}
   <script src="https://cdn.tailwindcss.com?plugins=typography,line-clamp"></script>
 </head>
 
@@ -17,7 +18,7 @@
             <ul class="flex-row">
                 <li><a href="/">Home</a></li>
                 <li><a href="/about">About</a></li>
-                {{#if loggedIn}}
+                {{#if logged_in}}
                 <button id="logout">Logout</button>
                 {{else}}
                 <li><a href="/login">Login/Signup</a></li>
@@ -33,15 +34,16 @@
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
+
     <footer>
       
     </footer>
   </div>
 
   <!-- Render script for logged in users only -->
-  {{!-- {{#if logged_in}}
-  <script src="/js/logout.js"></script>
-  {{/if}} --}}
+  {{#if logged_in}}
+  <script src="./js/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
