@@ -12,19 +12,18 @@
 <body>
   <div class="flex-column justify-space-around">
     <header class="display-flex justify-space-between align-center p-2">
-      <h1>
-        <span role="img" aria-label="money">💸</span>
-        <a href="/">Fund My Project!</a>
-      </h1>
-      <nav>
-        <!-- Conditionally render login or logout links -->
-        {{#if logged_in}}
-        <a href="/profile">profile</a> |
-        <button class="no-button" id="logout">logout</button>
-        {{else}}
-        <a href="/login">login</a>
-        {{/if}}
-      </nav>
+        <h1>REAL RECIPES</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/">About</a></li>
+                <li><a href="/">Login/Signup</a></li>
+                <li><a href="/">Contribute</a></li>
+            </ul>
+            <form>
+                <input type="text" id="search-input" placeholder="Search">
+            </form>
+        </nav>
     </header>
     <main class="container container-fluid mt-5">
       <!-- Render the sub layout -->
@@ -36,9 +35,9 @@
   </div>
 
   <!-- Render script for logged in users only -->
-  {{#if logged_in}}
+  {{!-- {{#if logged_in}}
   <script src="/js/logout.js"></script>
-  {{/if}}
+  {{/if}} --}}
 </body>
 
 </html>
