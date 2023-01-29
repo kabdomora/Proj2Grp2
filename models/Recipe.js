@@ -19,25 +19,25 @@ Recipe.init(
       type: DataTypes.STRING,
     },
     ingredients: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.TEXT,
     },
     instructions: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.TEXT,
     },
-    // category_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'category',
-    //     key: 'id',
-    //   }
-    // },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   },
-    // },
+    category_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'category',
+        key: 'id',
+      }
+    },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      },
+    },
   },
   {
     sequelize,
