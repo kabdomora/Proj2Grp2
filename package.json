@@ -27,5 +27,8 @@
     "mysql2": "^3.0.1",
     "sequelize": "^6.28.0",
     "validator": "^13.7.0"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.2.4"
   }
 }
