@@ -67,12 +67,10 @@ router.get('/category/:id', async (req, res) => {
 
     const category = categoryData.get({ plain: true });
 
-    /*
     res.render('category-results', {
       ...category,
       logged_in: req.session.logged_in,
     });
-    */
 
   } catch (err) {
     console.log(err);
