@@ -14,6 +14,13 @@ Review.init(
     review: {
       type: DataTypes.STRING,
     },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      }
+    },
     recipe_id: {
       type: DataTypes.INTEGER,
       references: {

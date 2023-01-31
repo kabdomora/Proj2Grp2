@@ -19,16 +19,16 @@ Recipe.init(
       type: DataTypes.STRING,
     },
     ingredients: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.TEXT,
     },
     instructions: {
-      type: DataTypes.ARRAY(DataTypes.STRING),
+      type: DataTypes.TEXT,
     },
-    rating_id: {
+    category_id: {
       type: DataTypes.INTEGER,
       references: {
-        model: 'rating',
-        key: 'id'
+        model: 'category',
+        key: 'id',
       }
     },
     user_id: {
