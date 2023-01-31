@@ -11,23 +11,23 @@
 </head>
 
 <body>
-  <div class="flex-col justify-around">
-    <header class="flex-auto justify-between content-center p-2">
-        <h1>REAL RECIPES</h1>
-        <nav class="flex-row">
-            <ul class="flex-row">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+  <div class="flex-col justify-around mx-0">
+    <header class="flex-auto justify-between content-center p-2 mx-0">
+        <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96">REAL RECIPES</h1>
+        <nav class="flex items-center justify-between bg-lime-300">
+            <ul class="grid grid-cols-5 p-4">
+                <li class="p-2 text-center"><a href="/">Home</a></li>
+                <li class="p-2 text-center"><a href="/about">About</a></li>
                 {{#if logged_in}}
                 <button id="logout">Logout</button>
                 {{else}}
-                <li><a href="/login">Login/Signup</a></li>
+                <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
                 {{/if}}
-                <li><a href="/contribute">Contribute</a></li>
+                <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
+                <form class="flex-row">
+                    <input type="text" id="search-input" placeholder="Search">
+                </form>
             </ul>
-            <form class="flex-row">
-                <input type="text" id="search-input" placeholder="Search">
-            </form>
         </nav>
     </header>
     <main class="container mx-auto mt-5">
