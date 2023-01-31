@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { User, Recipe, Category, Rating, Review } = require('../../models');
 
 // all Users
-router.get('/', async (req, res) => {
+router.get('/users', async (req, res) => {
   try {
     const users = await User.findAll();
     res.status(200).json(users);
@@ -13,7 +13,7 @@ router.get('/', async (req, res) => {
 });
 
 // all Recipes
-router.get('/', async (req, res) => {
+router.get('/recipes', async (req, res) => {
   try {
     const recipeData = await Recipe.findAll({
       include: [
@@ -31,12 +31,23 @@ router.get('/', async (req, res) => {
         },
         {
           model: Rating,
-          attributes: ['number'],
+          attributes: ['score'],
         }
       ]
     });
 
     res.status(200).json(recipeData);
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
+router.get('/categories', async (req, res) => {
+  try {
+    const categoryData = await Category.findAll();
+
+    res.status(200).json(categoryData);
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
