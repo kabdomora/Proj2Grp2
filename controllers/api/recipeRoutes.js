@@ -2,48 +2,39 @@ const router = require('express').Router();
 const { Recipe } = require('../../models');
 const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
   try {
-    const newRecipe = await Recipe.create(req.body);
+    const newRecipe = await Recipe.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
+
     res.status(200).json(newRecipe);
+
   } catch (err) {
     res.status(400).json(err);
   }
 });
 
-// router.post('/', withAuth, async (req, res) => {
-//   try {
-//     const newRecipe = await Recipe.create({
-//       ...req.body,
-//       user_id: req.session.user_id,
-//     });
+router.delete('/:id', withAuth, async (req, res) => {
+  try {
+    const recipe = await Recipe.destroy({
+      where: {
+        id: req.params.id,
+        user_id: req.session.user_id,
+      },
+    });
 
-//     res.status(200).json(newRecipe);
+    if (!recipe) {
+      res.status(404).json({ message: 'No recipe found with this id!' });
+      return;
+    }
 
-//   } catch (err) {
-//     res.status(400).json(err);
-//   }
-// });
+    res.status(200).json(recipe);
 
-// router.delete('/:id', withAuth, async (req, res) => {
-//   try {
-//     const recipe = await Recipe.destroy({
-//       where: {
-//         id: req.params.id,
-//         user_id: req.session.user_id,
-//       },
-//     });
-
-//     if (!recipe) {
-//       res.status(404).json({ message: 'No recipe found with this id!' });
-//       return;
-//     }
-
-//     res.status(200).json(recipe);
-
-//   } catch (err) {
-//     res.status(500).json(err);
-//   }
-// });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;
