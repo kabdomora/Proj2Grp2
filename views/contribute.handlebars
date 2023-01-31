@@ -1,0 +1,40 @@
+
+<div class="ingredients and image">
+    <div class="incredients list">
+        
+        <input class="flex-row" type="text">          
+            <div class="flex-col" id="allIngredients"></div>
+            <button class="block border-2 border-black border-single rounded-md" onclick="addIng()">Add Another Ingredient</button>
+            <button class="block border-2 border-black border-single rounded-md" onclick="removeIng()">Delete Last Ingredient</button>
+        <input type="hidden" value="1" id="totalIngs">
+
+    </div>
+
+    <div class="image upload">
+        <form action="url" enctype="multipart/form-data">
+            <div class="input-images"></div>
+        </form>
+    </div>
+</div>
+
+<div class="description">
+     <form class="w-full signup-form">
+      <div class="block my-0.5 w-full h-48">
+        {{!-- <label class="inline-block mt-0.5 mb-1 ml-1.5 text-xl" for="username-signup">Recipe Description:</label> --}}
+        <input class="block border-2 border-black border-single rounded-md" type="text" id="recipe-description" placeholder="Recipe Description"/>
+      </div>
+    </form>
+</div>
+
+    <div class="steps">
+        
+        <input class="flex-row" type="text">
+            <div class="flex-col" id="allSteps"></div>
+            <button class="block border-2 border-black border-single rounded-md" onclick="addStep()">Add Another Step</button>
+            <button class="block border-2 border-black border-single rounded-md" onclick="removeStep()">Delete Last Step</button>
+        <input type="hidden" value="1" id="totalSteps">
+
+    </div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./js/contribute.js"></script>
