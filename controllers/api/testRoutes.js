@@ -45,9 +45,16 @@ router.get('/recipes', async (req, res) => {
 
 router.get('/categories', async (req, res) => {
   try {
+
+    const recipesData = await Recipe.findAll({ attributes: [ 'id', 'name'] });
+
     const categoryData = await Category.findAll();
 
-    res.status(200).json(categoryData);
+    res.status(200).json({
+      categoryData,
+      recipesData,
+    });
+
   } catch (err) {
     console.log(err);
     res.status(500).json(err);

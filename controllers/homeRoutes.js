@@ -5,9 +5,15 @@ const withAuth = require('../utils/auth');
 // route for landing page "homepage"
 router.get('/', async (req, res) => {
   try {
-    const categories = await Category.findAll();
+
+    const recipesData = await Recipe.findAll({ attributes: [ 'id', 'name'] });
+    const recipes = recipesData.map((recipe) => recipe.get({ plain: true }));
+
+    const categoriesData = await Category.findAll();
+    const categories = categoriesData.map((category) => category.get({ plain: true }));
 
     res.render('homepage', {
+      recipes,
       categories,
       logged_in: req.session.logged_in,
     });
