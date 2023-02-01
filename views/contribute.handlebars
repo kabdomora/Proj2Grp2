@@ -1,0 +1,58 @@
+<h2 class="m-5 text-8xl">New Recipe</h2>
+
+<div class="m-5 basis-1/2 w-auto p-1 border-4 border-black border-double rounded-md bg-white text-black">
+    <form class="w-full">
+        <div class="flex flex-row w-full my-0.5">
+        <label class="m-5 text-xl" for="recipe-name">Recipe Name:</label>
+        <input class="m-5 block border-2 border-black border-single rounded-md" type="text" id="recipe-name" />
+        </div>
+    </form>
+</div>
+
+<div class="flex flex-row">
+    <div class="m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black" id="ingredientsList">
+        
+        <input class="flex flex-row" type="text">          
+            <div class="flex-col" id="allIngredients"></div>
+            <button class="border-2 border-black border-single rounded-md" onclick="addIng()">Add Ingredient</button>
+            <button class="border-2 border-black border-single rounded-md" onclick="removeIng()">Delete Last Ingredient</button>
+        <input type="hidden" value="1" id="totalIngs">
+
+    </div>
+
+    <div class="m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black" id="imageUpload">
+        <form action="url" enctype="multipart/form-data">
+            <div class="input-images"></div>
+        </form>
+    </div>
+</div>
+
+<div class="m-5 h-80 w-auto" id="description">
+     <form class="w-full signup-form">
+      <div class="block my-0.5 w-full h-48">
+        <label class="inline-block m-5 text-xl" for="username-signup">Recipe Description:</label>
+        <textarea class="h-64 w-full border-2 border-black border-single rounded-md" id="recipe-description" placeholder="Recipe Description"></textarea>
+      </div>
+    </form>
+</div>
+
+<div class="m-5 basis-1/2 w-auto p-1 border-4 border-black border-double rounded-md bg-white text-black" id="steps">
+    
+    <input class="flex flex-row" type="text">
+        <div class="flex-col" id="allSteps"></div>
+        <button class="border-2 border-black border-single rounded-md" onclick="addStep()">Add Step</button>
+        <button class="border-2 border-black border-single rounded-md" onclick="removeStep()">Delete Last Step</button>
+    <input type="hidden" value="1" id="totalSteps">
+
+</div>
+
+<div class="m-5 grid grid-cols-2 gap-4 place-items-stretch items-stretch">
+    <a href="/"><button class="w-32 bg-red-400 border-2 border-black border-single rounded-md">Cancel</button></a>
+    <button class="bg-lime-300 border-2 border-black border-single rounded-md">Save</button>
+{{!-- add save route via onclick, script needs to be added below --}}
+</div>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script src="./js/contribute.js"></script>
