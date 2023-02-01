@@ -6,6 +6,20 @@
         <label class="m-5 text-xl" for="recipe-name">Recipe Name:</label>
         <input class="m-5 block border-2 border-black border-single rounded-md" type="text" id="recipe-name" />
         </div>
+        <div class="flex flex-row w-full my-0.5">
+        <label class="m-5 text-xl" for="recipe-name">Category:</label>
+        <select class="m-5 block border-2 border-black border-single rounded-md" name="category" id="category">
+            <option value="1">Breakfast</option>
+            <option value="2">Lunch</option>
+            <option value="3">Dinner</option>
+            <option value="4">Desserts</option>
+            <option value="Snacks">Snacks</option>
+            <option value="Appetizers">Appetizers</option>
+            <option value="Soups">Spups</option>
+            <option value="Salads">Salads</option>
+            {{!-- replace these options with dynamic categories --}}
+        </select>
+        </div>
     </form>
 </div>
 
@@ -47,8 +61,8 @@
 </div>
 
 <div class="m-5 grid grid-cols-2 gap-4 place-items-stretch items-stretch">
-    <a href="/"><button class="w-32 bg-red-400 border-2 border-black border-single rounded-md">Cancel</button></a>
-    <button class="bg-lime-300 border-2 border-black border-single rounded-md">Save</button>
+    <a href="/"><button class="w-32 bg-red-400 border-2 border-black border-single rounded-md" id="cancel">Cancel</button></a>
+    <button class="bg-lime-300 border-2 border-black border-single rounded-md" id="save">Save</button>
 {{!-- add save route via onclick, script needs to be added below --}}
 </div>
 
