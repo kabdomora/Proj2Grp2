@@ -10,22 +10,26 @@
   <link rel="stylesheet" href="./css/style.css">    
   {{!-- This likely won't be needed --}}
   <script src="https://cdn.tailwindcss.com?plugins=typography,line-clamp"></script>
+  <link href="dist/image-uploader.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="flex-col justify-around">
-    <header class="flex-auto justify-between content-center p-2">
-        <h1>REAL RECIPES</h1>
-        <nav class="flex-row">
-            <ul class="flex-row">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+  <div class="flex-col justify-around mx-0">
+    <header class="flex-auto justify-between content-center p-2 mx-0">
+        <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96">REAL RECIPES</h1>
+        <nav class="flex items-center justify-between bg-lime-300">
+            <ul class="grid grid-cols-5 p-4">
+                <li class="p-2 text-center"><a href="/">Home</a></li>
+                <li class="p-2 text-center"><a href="/about">About</a></li>
                 {{#if logged_in}}
                 <button id="logout">Logout</button>
                 {{else}}
-                <li><a href="/login">Login/Signup</a></li>
+                <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
                 {{/if}}
-                <li><a href="/contribute">Contribute</a></li>
+                <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
+                <form class="flex-row">
+                    <input type="text" id="search-input" placeholder="Search">
+                </form>
             </ul>
             <form class="flex-row">
                 <input class="awesomplete" list="mylist"/>
@@ -52,6 +56,9 @@
   {{#if logged_in}}
   <script src="./js/logout.js"></script>
   {{/if}}
+  <script src="/path/to/cdn/jquery.min.js"></script>
+  <script src="dist/image-uploader.min.js"></script>
+
 </body>
 
 </html>
