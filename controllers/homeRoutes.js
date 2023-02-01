@@ -87,7 +87,9 @@ router.get('/category/:id', async (req, res) => {
 // route for adding recipe
 router.get('/contribute', withAuth, async (req, res) => {
   try {
-    res.render('contribute');
+    res.render('contribute', {
+      logged_in: req.session.logged_in,
+    });
 
   } catch (err) {
     console.log(err);
