@@ -13,9 +13,6 @@ const seedAll = async () => {
   await seedCategories();
   console.log('\n----- CATEGORIES SEEDED -----\n');
 
-  await seedRatings();
-  console.log('\n----- RATINGS SEEDED -----\n');
-
   await seedUsers();
   console.log('\n----- USERS SEEDED -----\n');
 
@@ -24,6 +21,9 @@ const seedAll = async () => {
 
   await seedReviews();
   console.log('\n----- REVIEWS SEEDED -----\n');
+
+  await seedRatings();
+  console.log('\n----- RATINGS SEEDED -----\n');
 
   process.exit(0);
 };

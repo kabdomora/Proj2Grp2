@@ -14,20 +14,20 @@ Rating.init(
     score: {
       type: DataTypes.INTEGER,
     },
-    // user_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'user',
-    //     key: 'id',
-    //   }
-    // },
-    // recipe_id: {
-    //   type: DataTypes.INTEGER,
-    //   references: {
-    //     model: 'recipe',
-    //     key: 'id',
-    //   }
-    // },
+    user_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'user',
+        key: 'id',
+      }
+    },
+    recipe_id: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: 'recipe',
+        key: 'id',
+      }
+    },
   },
   {
     sequelize,
