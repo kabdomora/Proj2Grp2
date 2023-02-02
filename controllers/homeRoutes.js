@@ -63,21 +63,22 @@ router.get('recipe/:id', async (req, res) => {
 
 router.get('/category/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findByPk({
+    const categoryData = await Category.findByPk(req.params.id, {
       include: [
         {
           model: Recipe,
-        }
-      ]
+          attributes: [
+            'id',
+            'name',
+            'description',
+          ],
+        },
+      ],
     });
 
     const category = categoryData.get({ plain: true });
 
-    res.render('category-results', {
-      ...category,
-      logged_in: req.session.logged_in,
-    });
-
+    res.render('results', { category, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
