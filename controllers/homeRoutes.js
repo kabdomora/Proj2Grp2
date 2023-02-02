@@ -27,7 +27,7 @@ router.get('/', async (req, res) => {
 // route for single recipe by id
 router.get('recipe/:id', async (req, res) => {
   try {
-    const recipeData = await Recipe.findByPk({
+    const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
           model: Category,
@@ -50,11 +50,7 @@ router.get('recipe/:id', async (req, res) => {
 
     const recipe = recipeData.get({ plain: true });
 
-    res.render('recipe-results', {
-      ...recipe,
-      logged_in: req.session.logged_in,
-    });
-
+    res.render('recipe', { recipe, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -63,21 +59,22 @@ router.get('recipe/:id', async (req, res) => {
 
 router.get('/category/:id', async (req, res) => {
   try {
-    const categoryData = await Category.findByPk({
+    const categoryData = await Category.findByPk(req.params.id, {
       include: [
         {
           model: Recipe,
-        }
-      ]
+          attributes: [
+            'id',
+            'name',
+            'description',
+          ],
+        },
+      ],
     });
 
     const category = categoryData.get({ plain: true });
 
-    res.render('category-results', {
-      ...category,
-      logged_in: req.session.logged_in,
-    });
-
+    res.render('results', { category, logged_in: req.session.logged_in });
   } catch (err) {
     console.log(err);
     res.status(500).json(err);
@@ -87,7 +84,11 @@ router.get('/category/:id', async (req, res) => {
 // route for adding recipe
 router.get('/contribute', withAuth, async (req, res) => {
   try {
+    const categoriesData = await Category.findAll();
+    const categories = categoriesData.map((category) => category.get({ plain: true }));
+
     res.render('contribute', {
+      categories,
       logged_in: req.session.logged_in,
     });
 
