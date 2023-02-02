@@ -87,7 +87,11 @@ router.get('/category/:id', async (req, res) => {
 // route for adding recipe
 router.get('/contribute', withAuth, async (req, res) => {
   try {
+    const categoriesData = await Category.findAll();
+    const categories = categoriesData.map((category) => category.get({ plain: true }));
+
     res.render('contribute', {
+      categories,
       logged_in: req.session.logged_in,
     });
 
