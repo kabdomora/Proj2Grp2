@@ -31,21 +31,23 @@ function addIng(){
   
     const name = document.querySelector('#recipe-name').value.trim();
     const description = document.querySelector('#recipe-description').value.trim();
-    let ingredients = "List of ingredients: ";
+    let ingredients = "[";
       function ingArray() {
         let ingString = document.getElementsByName('ingList');
         for (var i = 0; i < ingString.length; i++) {
           let ingredient = ingString[i];
-          ingredients = ingredients + ingredient.value + "*";
+          ingredients = ingredients + "'" + ingredient.value + "',";
         }
+        ingredients += "]";
       }
-    let instructions = "List of instructions: ";
+    let instructions = "[";
       function stepArray() {
         let insString = document.getElementsByName('stepList');
         for (var i = 0; i < insString.length; i++) {
           let step = insString[i];
-          instructions = instructions + step.value + "*";
+          instructions = instructions + "'" + step.value + "',";
         }
+        instructions += "]";
       }
     const category_id = document.querySelector('#category').value.trim();
   
