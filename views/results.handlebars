@@ -1,21 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <meta charset='UTF-8'/>
-    <meta http-equiv='X-UA-Compatible' content='IE=edge'/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<head>
-  <title>Search Results</title>
-</head>
-<body>
-    <header class="header">
-        <h1 class="title">Search Results</h1>
-        <!-- nav bar -->
-    </header>
-
-    <section class="recipe-1">
-        
+<section>
+    <h3>{{category.name}} Dishes</h3>
+    <section>
+        {{#each category.recipes as |recipe|}}
+        {{> recipe-details}}
+        {{/each}}
     </section>
-
-    
-</body>
-</html>
+</section>
