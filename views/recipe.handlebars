@@ -1,0 +1,32 @@
+<section>
+    <h3>{{recipe.name}}</h3>
+
+    <div class="flex flex-row">
+        <div class="flex flex-col">
+            <p>{{recipe.description}}</p>
+            <p>{{rating.score}}</p>
+        </div>
+        <div>
+            <img source="REPLACE-THIS-PATH" alt="image of {{recipe.name}}"/>
+        </div>
+    </div>
+
+    <div>
+        <ul id="ingredients"></ul>
+    </div>
+
+    <div>
+        <ul id="steps"></ul>
+    </div>
+
+    <div>
+        <h2>Rate this Recipe!</h2>
+        <div>
+        {{#each review.reviews as |review|}}
+        {{> reviews-details}}
+        {{/each}}
+        </div>
+    </div>
+
+
+</section>
