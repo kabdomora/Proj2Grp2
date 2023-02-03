@@ -36,8 +36,9 @@ function addIng(){
         let ingString = document.getElementsByName('ingList');
         for (var i = 0; i < ingString.length; i++) {
           let ingredient = ingString[i];
-          ingredients = ingredients + "'" + ingredient.value + "',";
+          ingredients += `"` + ingredient.value + `",`;
         }
+        ingredients = ingredients.substring(0,ingredients.length-1);
         ingredients += "]";
       }
     let instructions = "[";
@@ -45,8 +46,9 @@ function addIng(){
         let insString = document.getElementsByName('stepList');
         for (var i = 0; i < insString.length; i++) {
           let step = insString[i];
-          instructions = instructions + "'" + step.value + "',";
+          instructions += `"` + step.value + `",`;
         }
+        instructions = instructions.substring(0,instructions.length-1);
         instructions += "]";
       }
     const category_id = document.querySelector('#category').value.trim();
