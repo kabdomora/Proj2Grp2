@@ -1,4 +1,15 @@
-:root {
-
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
+:root {
+    /* font-size: 62.5%; */
+    --color-one: #96c93b;
+    --color-two: #ff9797;
+    --color-three: #ffe6aa;
+    --color-white: #fff4f4;
+}
