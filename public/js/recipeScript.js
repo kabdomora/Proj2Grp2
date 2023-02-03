@@ -17,6 +17,7 @@ async function getIngredients() {
     ingredients.forEach((value, index) => {
         if (index >=0) {
             const ingLi = document.createElement('li');
+            ingLi.setAttribute('class', 'font-light');
             ingLi.innerHTML = `${value}`;
             $('#ingredients').append(ingLi);
         }
@@ -25,6 +26,7 @@ async function getIngredients() {
     instructions.forEach((value, index) => {
         if (index >=0) {
             const stepLi = document.createElement('li');
+            stepLi.setAttribute('class', 'font-light');
             stepLi.innerHTML = `${value}`;
             $('#steps').append(stepLi);
         }

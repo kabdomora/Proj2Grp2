@@ -1,23 +1,23 @@
 <section>
-    <h3>{{recipe.name}}</h3>
+    <h3 class="font-extrabold text-5xl">{{recipe.name}}</h3>
 
     <div class="flex flex-row">
         <div class="flex flex-col">
-            <p>{{recipe.description}}</p>
+            <p class="my-10">{{recipe.description}}</p>
             <p>{{rating.score}}</p>
         </div>
         <div>
-            <img source="REPLACE-THIS-PATH" alt="image of {{recipe.name}}"/>
+            <img src="{{recipe.category.image}}" alt="image of {{recipe.category.name}}"/>
         </div>
     </div>
 
-    <div>
-        <ul id="ingredients"></ul>
+    <div class="mb-10">
+        <ul class="font-extrabold text-xl list-disc" id="ingredients">Ingredients: </ul>
         <p class="hidden"  value="1" id="totalIngs">{{recipe.instructions}}</p>
     </div>
 
-    <div>
-        <ul id="steps"></ul>
+    <div class="mb-10">
+        <ul class="font-extrabold text-xl list-disc" id="steps">Instructions: </ul>
         <p class="hidden" value="1" id="totalSteps"></p>
     </div>
 
