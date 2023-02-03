@@ -1,4 +1,16 @@
 # Proj2Grp2
+<h1 align="center">Real Recipes</h1>
+
+#### Description
+The projects purpose was to allow users to log in and view recipes and create recipes. Users can also choose from categories which makes it easier for them to browse.
+
+Steps Taken:
+>*
+>*
+>*
+>*
+
+Below is an image of the website
 
 ---
 
