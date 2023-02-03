@@ -16,6 +16,19 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
+router.get('/:id', async (req, res) => {
+  try {
+    const recipeData = await Recipe.findByPk(req.params.id);    
+
+    const recipe = recipeData.get({ plain: true });
+
+    res.json( recipe );
+  } catch (err) {
+    console.log(err);
+    res.status(500).json(err);
+  }
+});
+
 router.delete('/:id', withAuth, async (req, res) => {
   try {
     const recipe = await Recipe.destroy({
