@@ -1,3 +1,5 @@
+
+
 const ingredientString = JSON.parse(recipe.ingredients);
 const stepString = JSON.parse(recipe.instructions);
 
