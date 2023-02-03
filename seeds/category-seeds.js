@@ -3,19 +3,19 @@ const { Category } = require('../models');
 const categoryData = [
   {
     name: 'Breakfast',
-    image: 'breakfast.jpg',
+    image: './images/breakfast.jpg',
   },
   {
     name: 'Lunch',
-    image: 'lunch.jpg'
+    image: './images/lunch.jpg'
   },
   {
     name: 'Dinner',
-    image: 'dinner.jpg'
+    image: './images/dinner.jpg'
   },
   {
     name: 'Dessert',
-    image: 'dessert.jpg'
+    image: './images/dessert.jpg'
   },
 ];
 

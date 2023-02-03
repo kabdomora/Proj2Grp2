@@ -25,13 +25,16 @@ router.get('/', async (req, res) => {
 });
 
 // route for single recipe by id
-router.get('recipe/:id', async (req, res) => {
+router.get('/recipe/:id', async (req, res) => {
   try {
     const recipeData = await Recipe.findByPk(req.params.id, {
       include: [
         {
           model: Category,
-          attributes: ['name'],
+          attributes: [
+            'name',
+            'image',
+        ],
         },
         {
           model: User,
