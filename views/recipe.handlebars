@@ -24,7 +24,7 @@
     <div>
         <h2>Rate this Recipe!</h2>
         <div>
-        {{#each review.reviews as |review|}}
+        {{#each recipe.reviews as |review|}}
         {{> reviews-details}}
         {{/each}}
         </div>
@@ -33,4 +33,5 @@
 
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 <script src="./js/recipe.js"></script>

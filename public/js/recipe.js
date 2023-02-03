@@ -1,31 +1,22 @@
-const { $ } = require("awesomplete");
+const ingredientString = JSON.parse(recipe.ingredients);
+const stepString = JSON.parse(recipe.instructions);
 
-const ingredientString = recipe.ingredients;
-const stepString = recipe.instructions;
-
-ingredients = ingredientString.split("*");
-steps = stepString.split("*");
-
-function renderIngredients(ingredients) {
-    console.log(ingredients);
-    ingredients.forEach(ingredient => {
+function renderIngredients(ingredientString) {
+    console.log(ingredientString);
+    ingredientString.forEach(ingredient => {
         const ingEl = document.createElement('li');
         ingEl.innerHTML = `${ingredient}`;
         $('#ingredients').append(ingEl);
     })
-
-
-    let totalIngredients = parseInt($('#totalIngs').val())+1;
-    let ingredient="<li id='ing_"+totalIngredients+"'>";
-    $('#ingredients').append(ingredient);
-    $('#totalIngs').val(totalIngredients);
 }
 
-function renderSteps() {
-    let totalSteps = parseInt($('#totalSteps').val())+1;
-    let step="<li id='step_"+totalSteps+"'>";
-    $('#steps').append(step);
-    $('#totalSteps').val(totalSteps);
+function renderSteps(stepString) {
+    console.log(stepString);
+    stepString.forEach(step => {
+        const stepEl = document.createElement('li');
+        stepEl.innerHTML = `${step}`;
+        $('#steps').append(stepEl);
+    })
 }
 
 renderIngredients();

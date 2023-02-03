@@ -31,7 +31,10 @@ router.get('/recipe/:id', async (req, res) => {
       include: [
         {
           model: Category,
-          attributes: ['name'],
+          attributes: [
+            'name',
+            'image',
+        ],
         },
         {
           model: User,
