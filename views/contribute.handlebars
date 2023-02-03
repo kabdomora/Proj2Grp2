@@ -1,6 +1,7 @@
-<h2 class="m-5 text-8xl">New Recipe</h2>
+<h2 class="m-5 text-4xl">New Recipe</h2>
 
-<div class="m-5 basis-1/2 w-auto p-1 border-4 border-black border-double rounded-md bg-white text-black">
+<div class="flex flex-row">
+    <div class="flex flex-row m-5 basis-1/2 w-1/2 p-1 border-4 border rounded-md text-black border-yellow-200 border-single rounded-md bg-yellow-200 max-w-[35%] min-w-[312px]">
     <form class="w-full">
         <div class="flex flex-row w-full my-0.5">
         <label class="m-5 text-xl" for="recipe-name">Recipe Name:</label>
@@ -17,17 +18,22 @@
     </form>
 </div>
 
-<div class="flex flex-row">
-    <div class="m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black" id="ingredientsList">
+<div class="flex flex-row m-5 basis-1/2 w-1/2 p-1 border-4 border rounded-md text-black border-yellow-200 border-single rounded-md bg-yellow-200 max-w-[35%] min-w-[312px]">
+    <div class="m-5 basis-1/2 w-1/2 p-1 text-black" id="ingredientsList">
         
-        <input class="flex flex-row" type="text">          
+        <input class="flex flex-row" type="text" name="ingList">          
             <div class="flex-col" id="allIngredients"></div>
-            <button class="border-2 border-black border-single rounded-md" onclick="addIng()">Add Ingredient</button>
-            <button class="border-2 border-black border-single rounded-md" onclick="removeIng()">Delete Last Ingredient</button>
-        <input type="hidden" value="1" id="totalIngs">
+            <div class="flex flex-row m-3">
+                <button class="border-2 border-black border-single rounded-md" onclick="addIng()">Add Ingredient</button>
+                <button class="border-2 border-black border-single rounded-md" onclick="removeIng()">Del Ingredient</button>
+            </div>
+        <input type="hidden" value="1" id="totalIngs" display="none">
 
     </div>
 </div>
+</div>
+
+
 
 <div class="m-5 h-80 w-auto" id="description">
      <form class="w-full signup-form">
@@ -38,12 +44,12 @@
     </form>
 </div>
 
-<div class="m-5 basis-1/2 w-auto p-1 border-4 border-black border-double rounded-md bg-white text-black" id="steps">
+<div class="m-5 basis-1/2 w-auto p-4 rounded-md bg-yellow-200 text-black" id="steps">
     
     <input class="flex flex-row" type="text">
         <div class="flex-col" id="allSteps"></div>
         <button class="border-2 border-black border-single rounded-md" onclick="addStep()">Add Step</button>
-        <button class="border-2 border-black border-single rounded-md" onclick="removeStep()">Delete Last Step</button>
+        <button class="border-2 border-black border-single rounded-md" onclick="removeStep()">Del Step</button>
     <input type="hidden" value="1" id="totalSteps">
 
 </div>
