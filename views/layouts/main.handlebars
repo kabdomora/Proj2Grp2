@@ -27,17 +27,20 @@
                 <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
                 {{/if}}
                 <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
+                {{#if logged_in}}
+                <li><a href="/profile">Profile</a></li>
+                {{/if}}
             </ul>
 
         
-            <form class="flex-row mr-8">
-                <input class="awesomplete" list="mylist"/>
+            <form  class="search-form flex-row mr-8">
+                <input class="awesomplete search" list="mylist"/>
                 <datalist id="mylist">
                   {{#each recipes as |recipe|}}
-                  <option id="{{recipe.id}}">{{recipe.name}}</option>
+                  <option value="{{recipe.id}}">{{recipe.name}}</option>
                   {{/each}}
                 </datalist>
-                <button>Search</button>
+                <input type="submit">
             </form>
         </nav>
     </header>
@@ -55,8 +58,6 @@
   {{#if logged_in}}
   <script src="./js/logout.js"></script>
   {{/if}}
-  <script src="/path/to/cdn/jquery.min.js"></script>
-  <script src="dist/image-uploader.min.js"></script>
   <script src="./js/recipe.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 
