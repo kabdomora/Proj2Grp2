@@ -22,13 +22,16 @@
                 <li class="p-2 text-center"><a href="/">Home</a></li>
                 <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
                 {{#if logged_in}}
+                <li class="p-2 text-center"><a href="/profile">profile</a></li>
+                {{/if}}
+                {{#if logged_in}}
                 <button id="logout">Logout</button>
                 {{else}}
                 <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
                 {{/if}}
             </ul>
 
-        
+
             {{!-- <form class="flex-row mr-8">
                 <input class="awesomplete" list="mylist"/>
                 <datalist id="mylist">
