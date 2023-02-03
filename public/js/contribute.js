@@ -1,6 +1,6 @@
 function addIng(){
     var newIngredient = parseInt($('#totalIngs').val())+1;
-    var nextIngredient="<input class='block border-2 border-black border-single rounded-md bg-cyan-400' type='text' name='ingList' id='ing_"+newIngredient+"'>";
+    var nextIngredient="<input class='block border-2 border-black border-single rounded-md bg-lime-400' type='text' name='ingList' id='ing_"+newIngredient+"'>";
     $('#allIngredients').append(nextIngredient);
     $('#totalIngs').val(newIngredient)
   }
@@ -14,7 +14,7 @@ function addIng(){
 
   function addStep(){
     var newStep = parseInt($('#totalSteps').val())+1;
-    var nextStep="<input class='block border-2 border-black border-single rounded-md bg-cyan-400' type='text' name='stepList' id='step_"+newStep+"'>";
+    var nextStep="<input class='block border-2 border-black border-single rounded-md bg-lime-400' type='text' name='stepList' id='step_"+newStep+"'>";
     $('#allSteps').append(nextStep);
     $('#totalSteps').val(newStep)
   }
