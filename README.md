@@ -10,6 +10,7 @@ Steps Taken:
 >*
 >*
 
+Below is an image of the website
 
 ---
 
