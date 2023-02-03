@@ -1,6 +1,10 @@
-<section class="card">
-  <a href="/gallery/{{id}}">
+<section class="m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black">
+  <a href="/recipe/{{id}}">
     <header>{{name}}</header>
-    <img src="/images/{{paintings.[0].filename}}" alt="{{paintings.[0].description}}">
+
+    <div>
+      {{!-- <img src="/images/REPLACE-THIS-PATH" alt="image of {{name}}"> --}}
+      <p>{{description}}</p>
+    </div>
   </a>
 </section>
