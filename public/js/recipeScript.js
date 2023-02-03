@@ -1,25 +1,38 @@
 
+const id = window.location.href.split('/')[4];
 
-const ingredientString = JSON.parse(recipe.ingredients);
-const stepString = JSON.parse(recipe.instructions);
+async function getIngredients() {
+    const response = await fetch(`../api/recipes/${id}`)
+    const data = await response.json();
+    
+    // console.log("data", data);
+    // console.log("ingredientString", data.ingredients);
 
-function renderIngredients(ingredientString) {
-    console.log(ingredientString);
-    ingredientString.forEach(ingredient => {
-        const ingEl = document.createElement('li');
-        ingEl.innerHTML = `${ingredient}`;
-        $('#ingredients').append(ingEl);
+    const ingredients = JSON.parse(data.ingredients);
+    const instructions = JSON.parse(data.instructions);
+    
+    // console.log("ingredients", ingredients);
+    // console.log("instructions", instructions);
+
+    ingredients.forEach((value, index) => {
+        if (index >=0) {
+            const ingLi = document.createElement('li');
+            ingLi.innerHTML = `${value}`;
+            $('#ingredients').append(ingLi);
+        }
     })
+
+    instructions.forEach((value, index) => {
+        if (index >=0) {
+            const stepLi = document.createElement('li');
+            stepLi.innerHTML = `${value}`;
+            $('#steps').append(stepLi);
+        }
+    })
+
+
+    return data;
 }
 
-function renderSteps(stepString) {
-    console.log(stepString);
-    stepString.forEach(step => {
-        const stepEl = document.createElement('li');
-        stepEl.innerHTML = `${step}`;
-        $('#steps').append(stepEl);
-    })
-}
 
-renderIngredients();
-renderSteps();
+const recipe = getIngredients();

@@ -54,13 +54,15 @@
   <!-- Render script for logged in users only -->
   {{#if logged_in}}
   <script src="./js/logout.js"></script>
+  {{else}}
+  <script src="./js/login.js"></script>
   {{/if}}
 <script
   src="https://code.jquery.com/jquery-3.6.3.min.js"
   integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
   crossorigin="anonymous"></script>
   <script src="dist/image-uploader.min.js"></script>
-  <script src="./js/recipeScript.js"></script>
+
   
 
 </body>
