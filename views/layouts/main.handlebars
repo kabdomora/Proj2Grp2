@@ -7,18 +7,18 @@
   <title>Fund My Project!</title>
   <link rel="stylesheet" href="awesomplete.css" />
   <script src="awesomplete.js" async></script>
-  <link rel="stylesheet" href="./css/style.css">    
+  <link rel="stylesheet" href="./css/jass.css">    
   {{!-- This likely won't be needed --}}
   <script src="https://cdn.tailwindcss.com?plugins=typography,line-clamp"></script>
   <link href="dist/image-uploader.min.css" rel="stylesheet">
 </head>
 
 <body>
-  <div class="flex-col justify-around mx-0">
+  <div class="flex-col justify-around">
     <header class="flex-auto justify-between content-center p-2 mx-0">
-        <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96">REAL RECIPES</h1>
-        <nav class="flex items-center justify-between bg-lime-300">
-            <ul class="grid grid-cols-5 p-4">
+        <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96 mb-3">REAL RECIPES</h1>
+        <nav class="flex items-center justify-between bg-lime-300 flex-wrap">
+            <ul class="grid grid-cols-5 p-4 ">
                 <li class="p-2 text-center"><a href="/">Home</a></li>
                 <li class="p-2 text-center"><a href="/about">About</a></li>
                 {{#if logged_in}}
@@ -28,7 +28,9 @@
                 {{/if}}
                 <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
             </ul>
-            <form class="flex-row">
+
+        
+            <form class="flex-row mr-8">
                 <input class="awesomplete" list="mylist"/>
                 <datalist id="mylist">
                   {{#each recipes as |recipe|}}
@@ -39,7 +41,7 @@
             </form>
         </nav>
     </header>
-    <main class="container mx-auto mt-5">
+    <main class="container">
       <!-- Render the sub layout -->
       {{{ body }}}
     </main>
