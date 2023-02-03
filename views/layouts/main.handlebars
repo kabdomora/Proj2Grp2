@@ -5,34 +5,43 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Fund My Project!</title>
-  <link rel="stylesheet" href="./css/style.css">    
-
+  <link rel="stylesheet" href="awesomplete.css" />
+  <script src="awesomplete.js" async></script>
+  <link rel="stylesheet" href="./css/jass.css">
   {{!-- This likely won't be needed --}}
   <script src="https://cdn.tailwindcss.com?plugins=typography,line-clamp"></script>
+  <link href="dist/image-uploader.min.css" rel="stylesheet">
 </head>
 
 <body>
   <div class="flex-col justify-around">
-    <header class="flex-auto justify-between content-center p-2">
-        <h1>REAL RECIPES</h1>
-        <nav class="flex-row">
-            <ul class="flex-row">
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+    <header class="flex-auto justify-between content-center p-2 mx-0">
+      <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96 mb-3">REAL RECIPES</h1>
+      <nav class="flex items-center justify-between bg-lime-300 flex-wrap">
+        <ul class="grid grid-cols-5 p-4 ">
+          <li class="p-2 text-center"><a href="/">Home</a></li>
+          <li class="p-2 text-center"><a href="/about">About</a></li>
+          {{#if logged_in}}
+          <button id="logout">Logout</button>
+          {{else}}
+          <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
+          {{/if}}
+          <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
+          {{#if logged_in}}
+          <li><a href="/profile">Profile</a></li>
+          {{/if}}
+        </ul>
 
-                {{#if logged_in}}
-                <button id="logout">Logout</button>
-                {{else}}
-                <li><a href="/login">Login/Signup</a></li>
-                {{/if}}
-                <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
-                {{#if logged_in}}
-                <li><a href="/profile">Profile</a></li>
-                {{/if}}
-
-            </ul>
-            </form>
-        </nav>
+        <form class="search-form flex-row mr-8">
+          <input class="awesomplete search" list="mylist" />
+          <datalist id="mylist">
+            {{#each recipes as |recipe|}}
+            <option value="{{recipe.id}}">{{recipe.name}}</option>
+            {{/each}}
+          </datalist>
+          <input type="submit">
+        </form>
+      </nav>
     </header>
     <main class="container mx-auto mt-5">
       <!-- Render the sub layout -->
@@ -40,7 +49,7 @@
     </main>
 
     <footer>
-      
+
     </footer>
   </div>
 
@@ -48,10 +57,8 @@
   {{#if logged_in}}
   <script src="./js/logout.js"></script>
   {{/if}}
-
   <script src="./js/recipe.js"></script>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-
 
 </body>
 
