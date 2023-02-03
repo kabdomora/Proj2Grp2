@@ -14,23 +14,22 @@
 </head>
 
 <body>
-  <div class="flex-col justify-around">
-    <header class="flex-auto justify-between content-center p-2 mx-0">
-        <h1 class="text-4xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96 mb-3">REAL RECIPES</h1>
-        <nav class="flex items-center justify-between bg-lime-300 flex-wrap">
-            <ul class="grid grid-cols-5 p-4 ">
+  <div class="flex-row justify-between ">
+    <header class="flex-auto content-center p-2 mx-0">
+        <h1 class="text-5xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96 mb-3">REAL RECIPES</h1>
+        <nav class="flex items-center bg-lime-300 flex-wrap justify-evenly">
+            <ul class="flex flex-row flex-wrap justify-evenly p-4">
                 <li class="p-2 text-center"><a href="/">Home</a></li>
-                <li class="p-2 text-center"><a href="/about">About</a></li>
+                <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
                 {{#if logged_in}}
                 <button id="logout">Logout</button>
                 {{else}}
                 <li class="p-2 text-center"><a href="/login">Login/Signup</a></li>
                 {{/if}}
-                <li class="p-2 text-center"><a href="/contribute">Contribute</a></li>
             </ul>
 
         
-            <form class="flex-row mr-8">
+            {{!-- <form class="flex-row mr-8">
                 <input class="awesomplete" list="mylist"/>
                 <datalist id="mylist">
                   {{#each recipes as |recipe|}}
@@ -38,7 +37,7 @@
                   {{/each}}
                 </datalist>
                 <button>Search</button>
-            </form>
+            </form> --}}
         </nav>
     </header>
     <main class="container mx-auto mt-5">
