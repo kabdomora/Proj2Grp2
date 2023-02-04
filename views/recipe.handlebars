@@ -1,12 +1,12 @@
 <section class="p-10 bg-yellow-200 text-black rounded-lg shadow-lg">
     <h3 class="font-extrabold text-5xl text-center">{{recipe.name}}</h3>
 
-    <div class="flex flex-row items-center">
-        <div class="flex flex-col p-10 w-3/5">
-            <p class="bg-lime-300 my-10 rounded-lg shadow-lg p-4">{{recipe.description}}</p>
-        </div>
+    <div class="flex flex-col items-center">
         <div class="w-2/5">
-            <img class="rounded-lg shadow-lg my-4" src="{{recipe.category.image}}" alt="image of {{recipe.category.name}}"/>
+            <img class="rounded-lg shadow-lg my-4" src="{{recipe.category.image}}" alt="image of {{recipe.category.name}}" />
+        </div>
+        <div class="flex flex-col">
+            <p class="bg-lime-300 my-10 rounded-lg shadow-lg p-2">{{recipe.description}}</p>
         </div>
     </div>
 
@@ -22,11 +22,11 @@
 
     <div>
         <div id="reviewHeader">
-            <h2>Rate this Recipe!</h2>
+            <h2 class="font-extrabold text-xl">Rate this Recipe!</h2>
         </div>
         
         {{#if logged_in}}                            
-        <button class="bg-lime-300 border-2 border-black border-single rounded-md" onclick="addReview()" id="addReview">Add a Review</button>            
+        <button class="bg-lime-300 border-2 border-black border-single rounded-md px-2" onclick="addReview()" id="addReview">Add a Review</button>            
         {{/if}}
         <div id="allReviews">
         {{#each recipe.reviews as |review|}}

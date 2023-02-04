@@ -36,7 +36,7 @@ async function getIngredients() {
 }
 
 function addReview(){
-    let newReview="<input class='m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black' type='text' id='newReview'>";
+    let newReview="<input class='p-5 bg-lime-300 text-black rounded-lg shadow-lg m-5' type='text' id='newReview'>";
     $('#allReviews').append(newReview);
     $('#addReview').remove();
     let saveDelete="<div class='m-5 grid grid-cols-2 gap-4 place-items-stretch items-stretch' id='saveDelete'>";
