@@ -1,15 +1,24 @@
 <div>
 {{#if user.recipes.length}}
-<div class="col-md-6 recipe-list">
-  <h3>Recipes:</h3>
 
+<div class="col-md-6 recipe-list">
+  <h3 class="m-5 text-4xl">Recipes:</h3>
+
+  
   {{#each user.recipes as |recipe|}}
+  
+  <div class="flex flex-row m-5 basis-1/2 w-1/2 p-1 border-4 border rounded-md text-black border-yellow-200 border-single rounded-md bg-yellow-200 max-w-[35%] min-w-[312px]">
+  <form class="w-full">
+    <div class="flex flex-row w-full my-0.5">
+      <label class="m-5 text-xl" for="recipe-name</label>
+    </div>
   <div>
     <div>
       <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>
     </div>
     <div>
-      <button data-id="{{recipe.id}}">DELETE</button>
+      <button data-id="{{recipe.id}}" button class="">DELETE</button>
+      
     </div>
   </div>
   {{/each}}
@@ -18,3 +27,7 @@
 </div>
 
 <script src="./js/profile.js"></script>
+
+
+
+
