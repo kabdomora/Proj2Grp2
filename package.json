@@ -20,7 +20,6 @@
     },
     "homepage": "https://github.com/kabdomora/Proj2Grp2#readme",
     "dependencies": {
-        "awesomplete": "^1.1.5",
         "bcrypt": "^5.1.0",
         "connect-session-sequelize": "^7.1.5",
         "crypto": "^1.0.1",
