@@ -6,10 +6,23 @@
     box-sizing: border-box;
 }
 
-:root {
-    /* font-size: 62.5%; */
-    --color-one: #96c93b;
-    --color-two: #ff9797;
-    --color-three: #ffe6aa;
-    --color-white: #fff4f4;
+#header-ul {
+    display: flex;
+    flex-direction: row;
+}
+
+.header-li {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+@media screen and (max-width: 600px) {
+    #login, 
+    #main {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        overflow: auto;
+    }
 }
