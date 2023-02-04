@@ -1,21 +1,6 @@
-{{!-- {{#each categories as |category|}}
-
-<div class="mx-3 my-3 basis-1/2 w-1/2 p-1 border-4 border-yellow-200 border-single rounded-md bg-yellow-200 text-black px-4 py-8 text-center wrap text-2xl">
-    <h2 id="{{category.id}}">{{category.name}}</h2>
-</div>
-
-
-
-{{/each}} --}}
-
-<div class="flex flex-row flex-wrap">
+<div class="grid grid-cols-2 gap-4">
     {{#each categories as |category|}}
-
-    {{!-- <div class="mx-3 my-3 basis-1/2 w-1/2 p-1 border-4 border-yellow-200 border-single rounded-md bg-yellow-200 text-black px-4 py-8 text-center flex-wrap text-2xl max-w-[45%] min-w-[312px]">
-        <h2 id="{{category.id}}">{{category.name}}</h2>
-    </div> --}}
     {{> category-details}}
-
     {{/each}}
 </div>
 
