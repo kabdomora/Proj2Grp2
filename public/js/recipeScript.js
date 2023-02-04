@@ -1,8 +1,7 @@
-
-const id = window.location.href.split('/')[4];
+const recipe_id = window.location.href.split('/')[4];
 
 async function getIngredients() {
-    const response = await fetch(`../api/recipes/${id}`)
+    const response = await fetch(`../api/recipes/${recipe_id}`)
     const data = await response.json();
     
     // console.log("data", data);
@@ -36,5 +35,53 @@ async function getIngredients() {
     return data;
 }
 
+function addReview(){
+    let newReview="<input class='m-5 basis-1/2 w-1/2 p-1 border-4 border-black border-double rounded-md bg-white text-black' type='text' id='newReview'>";
+    $('#allReviews').append(newReview);
+    $('#addReview').remove();
+    let saveDelete="<div class='m-5 grid grid-cols-2 gap-4 place-items-stretch items-stretch' id='saveDelete'>";
+    let deleteButton="<button class='w-32 bg-red-400 border-2 border-black border-single rounded-md' onclick='cancelReview()' id='cancel'>Cancel";
+    let saveButton="<button class='bg-lime-300 border-2 border-black border-single rounded-md' onclick='saveReview()' id='save'>Save";
+    $('#allReviews').append(saveDelete);
+    $('#saveDelete').append(deleteButton);
+    $('#saveDelete').append(saveButton);
+}
+
+function cancelReview(){
+    $('#saveDelete').remove();
+    $('#newReview').remove();
+    let addReview="<button class='bg-lime-300 border-2 border-black border-single rounded-md' onclick='addReview()'' id='addReview'>Add a Review";
+    $('#reviewHeader').append(addReview);
+}
+
+
+async function saveReview(){
+  
+    const review = document.querySelector('#newReview').value.trim();
+    console.log('review', review);
+    console.log('recipe', typeof(recipe_id) );
+    
+  
+    if ( review && recipe_id ) {
+
+      const response = await fetch('/api/reviews', {
+        method: 'POST',
+        body: JSON.stringify( {review, recipe_id} ),
+        headers: { 'Content-Type': 'application/json' },
+      });
+  
+      if (response.ok) {
+        document.location.reload();
+      } else {
+        alert('Failed to submit review.');
+      }
+    }
+}
+
+
+
+//   document
+//     .getElementById('save')
+//     .addEventListener('click', newReview);
 
 const recipe = getIngredients();

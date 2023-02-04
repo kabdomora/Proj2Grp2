@@ -25,6 +25,14 @@ const recipeData = [
     category_id: 2,
     user_id: 3,
   },
+  {
+    name: "Stir-Fried Beef and Broccoli",
+    description: "A quick and easy stir-fry made with marinated beef, broccoli, and a flavorful sauce.",
+    ingredients: '["1 lb flank steak, sliced into thin strips", "1 head broccoli, chopped into florets", "2 cloves garlic, minced", "1 tbsp ginger, grated", "2 tbsp soy sauce", "1 tbsp hoisin sauce", "1 tbsp cornstarch", "2 tbsp vegetable oil"]',
+    instructions: '["In a small bowl, whisk together the soy sauce, hoisin sauce, and cornstarch.", "In a large skillet or wok, heat the oil over high heat.", "Add the beef and cook until browned, about 3-4 minutes.", "Remove the beef from the skillet and set aside.", "Add the broccoli, garlic, and ginger to the same skillet and stir-fry until the broccoli is tender-crisp, about 2-3 minutes.", "Return the beef to the skillet and add the sauce.", "Toss everything together until heated through and the sauce has thickened, about 2-3 minutes.", "Serve over rice."]',
+    category_id: 2,
+    user_id: 4,
+  },
 ];
 
 const seedRecipes = () => Recipe.bulkCreate(recipeData);
