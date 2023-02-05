@@ -30,6 +30,7 @@
         {{/if}}
         <div id="allReviews">
         {{#each recipe.reviews as |review|}}
+        <h2>{{recipe.review.user_id}}</h2>
         {{> reviews-details}}
         {{/each}}
         </div>
