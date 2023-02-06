@@ -4,14 +4,16 @@
       <h3 class="text-center text-3xl font-bold">My Recipes</h3>
 
   {{#each user.recipes as |recipe|}}
-    <div class="p-5 bg-yellow-200 text-black text-center font-bold rounded-lg shadow-lg m-5">
+    <section class="p-5 bg-yellow-200 text-black text-center hover:uppercase font-bold rounded-lg shadow-lg m-5">
+        <a href="/recipe/{{recipe.id}}">
         <div>
-      <h4><a href="/recipe/{{recipe.id}}">{{recipe.name}}</a></h4>
+      <h4>{{recipe.name}}</h4>
         </div>
         <div>
-      <button class="bg-lime-300 hover:bg-lime-500 text-black font-bold py-2 px-4 rounded-full" data-id="{{recipe.id}}">Delete</button>
+      <button class="bg-lime-300 mt-4 hover:bg-lime-500 text-black font-bold py-2 px-4 rounded-full" data-id="{{recipe.id}}">Delete</button>
         </div>
-      </div>
+        </a>
+      </section>
   {{/each}}
     </div>
 {{/if}}
