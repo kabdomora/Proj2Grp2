@@ -1,3 +1,5 @@
+
+// These lines of code are requiring several modules in a Node.js application using the Express framework. 
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
@@ -6,17 +8,23 @@ const crypto = require('crypto');
 const routes = require('./controllers');
 const helpers = require('./utils/helpers');
 
+
+// Sequelize library for database connections and the SequelizeStore for session storage in a Connect/Express application.
 const sequelize = require('./config/connection');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
+// Initializing an Express application and setting the port number for the application to listen on.
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-// Set up Handlebars.js engine with custom helpers
+// Handlebars.js engine with custom helpers
 const hbs = exphbs.create({ helpers });
 
+// Creates secret property value for the session
 const secret = crypto.randomBytes(64).toString('hex');
 
+
+// Apply the session middleware to the application.
 const sess = {
   secret: secret,
   cookie: {

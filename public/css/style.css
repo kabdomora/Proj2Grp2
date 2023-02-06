@@ -1,3 +1,4 @@
+/* univerisal stylings */
 *,
 *::before,
 *::after {
@@ -16,7 +17,7 @@
     justify-content: space-evenly;
 }
 
-
+/* media queries for screens <= 600px */
 @media screen and (max-width: 600px) {
     #login, 
     #main {
