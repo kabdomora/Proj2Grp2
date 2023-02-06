@@ -23,8 +23,8 @@
         <input class="mb-2 block border-2 border-black border-single rounded-md" type="text" name="ingList">          
             <div class="flex-col" id="allIngredients"></div>
             <div class="flex flex-row justify-start">
-                <button class="mr-2 bg-lime-300 px-2 border-2 border-black border-single rounded-md" onclick="addIng()">More Ingredients</button>
-                <button class="bg-red-400 px-2 border-2 border-black border-single rounded-md" onclick="removeIng()">Del Ingredient</button>
+                <button class="mr-2 bg-lime-300 px-2 border-2 border-black border-single rounded-md font-medium" onclick="addIng()">More Ingredients</button>
+                <button class="bg-red-400 px-2 border-2 border-black border-single rounded-md font-medium" onclick="removeIng()">Delete Ingredient</button>
             </div>
         <input type="hidden" value="1" id="totalIngs" display="none">
 
@@ -46,15 +46,15 @@
 <div class="m-5 basis-1/2 w-auto p-4 rounded-md bg-yellow-200 text-black shadow-lg" id="steps">
     <input class="mb-2 block border-2 border-black border-single rounded-md" type="text" name="stepList">
         <div class="flex-col" id="allSteps"></div>
-        <button class="mr-2 bg-lime-300 px-2 border-2 border-black border-single rounded-md" onclick="addStep()">More Steps</button>
-        <button class="bg-red-400 px-2 border-2 border-black border-single rounded-md" onclick="removeStep()">Del Step</button>
+        <button class="mr-2 bg-lime-300 px-2 border-2 border-black border-single rounded-md font-medium" onclick="addStep()">More Steps</button>
+        <button class="bg-red-400 px-2 border-2 border-black border-single rounded-md font-medium" onclick="removeStep()">Delete Step</button>
     <input type="hidden" value="1" id="totalSteps">
 
 </div>
 
 <div class="flex justify-between">
-    <a href="/"><button class="w-32 mr-2 bg-red-400 border-2 border-black border-single rounded-md" id="cancel">Cancel</button></a>
-    <button class="w-32 bg-lime-300 border-2 border-black border-single rounded-md" id="save">Save</button>
+    <a href="/"><button class="w-32 mr-2 bg-red-400 border-2 border-black border-single rounded-md font-medium" id="cancel">Cancel</button></a>
+    <button class="w-32 bg-lime-300 border-2 border-black border-single rounded-md font-medium" id="save">Save</button>
 </div>
 
 
