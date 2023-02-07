@@ -27,15 +27,8 @@ View our demo here: https://drive.google.com/file/d/1cvqbkDKCKNtoBj-70uimrgm13Nv
 
 Deployed Link: https://floating-lowlands-40637.herokuapp.com/
 
-Below is a demo of the website:
-
-
-
-
-
-
-
 
 
 Pitch Deck: https://docs.google.com/presentation/d/17HqIwJMNpv0qFrrSWXVuRg2_as1vqyRQhkHNbRPccg8/edit?usp=sharing
+
 Wireframe: https://app.diagrams.net/#Hkabdomora%2FProj2Grp2%2Fmain%2FUntitled%20Diagram.drawio
