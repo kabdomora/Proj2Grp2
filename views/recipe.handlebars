@@ -1,5 +1,6 @@
 <section class="p-10 bg-yellow-200 text-black rounded-lg shadow-lg">
     <h3 class="font-extrabold text-5xl text-center">{{recipe.name}}</h3>
+    <h4 class="mt-4 text-center italic font-medium">Contributed by: {{recipe.user.name}}</h4>
 
     <div class="flex flex-col items-center">
         <div class="w-2/5">
@@ -26,7 +27,7 @@
         </div>
         
         {{#if logged_in}}                            
-        <button class="bg-lime-300 border-2 border-black border-single rounded-md px-2" onclick="addReview()" id="addReview">Add a Review</button>            
+        <button class="bg-lime-300 border-2 border-black border-single rounded-md px-4" onclick="addReview()" id="addReview">Add a Review</button>            
         {{/if}}
         <div id="allReviews">
         {{#each recipe.reviews as |review|}}
