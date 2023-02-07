@@ -27,7 +27,7 @@ View our demo here: https://drive.google.com/file/d/1cvqbkDKCKNtoBj-70uimrgm13Nv
   * No tests are currently available
 
 ## Images
-![Screenshot](./Screenshots/RealRecipes.JPG)
+![Home](./Screenshots/RealRecipes.JPG)
 ![Category](./Screenshots/Category.JPG)
 ![Recipe](./Screenshots/Recipe.JPG)
 ![LoginSignup](./Screenshots/LoginSignup.JPG)
