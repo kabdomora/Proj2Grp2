@@ -26,6 +26,10 @@
 
 Deployed Link: https://floating-lowlands-40637.herokuapp.com/
 
+Below is a screenshot of our homepage:
+![Real-Recipes](./public/images/real-recipes-2.png)
+
+
 Below is a demo of the website:
 
 
