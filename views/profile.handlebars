@@ -3,6 +3,7 @@
     <div class="col-md-6 recipe-list">
       <h3 class="text-center text-3xl font-bold">My Recipes</h3>
 
+  <!-- renders the use recipes on their profile page -->
   {{#each user.recipes as |recipe|}}
     <section class="p-5 bg-yellow-200 text-black text-center hover:uppercase font-bold rounded-lg shadow-lg m-5">
         <a href="/recipe/{{recipe.id}}">
