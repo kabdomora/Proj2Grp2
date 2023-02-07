@@ -12,7 +12,9 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/contribute');
+        localStorage.setItem('back', document.referrer);
+        const back = localStorage.getItem('back');
+        location.href = back;      
       } else {
         alert('Failed to log in.');
       }
@@ -34,7 +36,9 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        localStorage.setItem('back', document.referrer);
+        const back = localStorage.getItem('back');
+        location.href = back;  
       } else {
         alert('Failed to sign up.');
       }

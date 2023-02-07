@@ -19,14 +19,17 @@
     <!-- header that contains title and navbar -->
     <header class="flex-auto content-center p-2 mx-0">
         <a href="/"><h1 class="text-5xl w-full sm:w-32 md:w-48 lg:w-64 xl:w-96 mb-3">REAL RECIPES</h1></a>
-        <nav id="header=nav" class="flex items-center bg-lime-300 flex-wrap justify-evenly ">
 
           <!-- navbar links and helpers -->
-            <ul id="header-ul" class="flex flex-row flex-wrap justify-evenly p-4">
+        <nav id="header=nav" class="bg-lime-300 rounded-lg">
+            <ul id="header-ul" class="font-serif text-xl font-medium flex flex-wrap justify-evenly p-4">
+
                 <li class="header-li p-2 text-center"><a href="/">Home</a></li>
                 <li class="header-li p-2 text-center"><a href="/contribute">Contribute</a></li>
                 {{#if logged_in}}
-                <li class="header-li p-2 text-center"><a href="/profile">profile</a></li>
+
+                <li class="p-2 text-center"><a href="/profile">Profile</a></li>
+
                 {{/if}}
                 {{#if logged_in}}
                 <button id="logout">Logout</button>

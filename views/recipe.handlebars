@@ -1,14 +1,16 @@
-<section>
+
 
     <!-- renders the user recipe -->
-    <h3 class="font-extrabold text-5xl">{{recipe.name}}</h3>
+<section class="p-10 bg-yellow-200 text-black rounded-lg shadow-lg">
+    <h3 class="font-extrabold text-5xl text-center">{{recipe.name}}</h3>
+    <h4 class="mt-4 text-center italic font-medium">Contributed by: {{recipe.user.name}}</h4>
 
-    <div class="flex flex-row">
-        <div class="flex flex-col">
-            <p class="my-10">{{recipe.description}}</p>
+    <div class="flex flex-col items-center">
+        <div class="w-2/5">
+            <img class="rounded-lg shadow-lg my-4" src="{{recipe.category.image}}" alt="image of {{recipe.category.name}}" />
         </div>
-        <div>
-            <img src="{{recipe.category.image}}" alt="image of {{recipe.category.name}}"/>
+        <div class="flex flex-col">
+            <p class="bg-lime-300 my-10 rounded-lg shadow-lg p-2">{{recipe.description}}</p>
         </div>
     </div>
 
@@ -26,12 +28,12 @@
 
     <div>
         <div id="reviewHeader">
-            <h2>Rate this Recipe!</h2>
+            <h2 class="font-extrabold text-xl">Rate this Recipe!</h2>
         </div>
         
         <!-- if user is logged in able to see recipes on profile page -->
         {{#if logged_in}}                            
-        <button class="bg-lime-300 border-2 border-black border-single rounded-md" onclick="addReview()" id="addReview">Add a Review</button>            
+        <button class="bg-lime-300 border-2 border-black border-single rounded-md px-4" onclick="addReview()" id="addReview">Add a Review</button>            
         {{/if}}
         <div id="allReviews">
         {{#each recipe.reviews as |review|}}
@@ -44,4 +46,6 @@
 </section>
 
 <script src="/js/recipeScript.js"></script>
+<script src="/js/login.js"></script>
+<script src="/js/logout.js"></script>
 
