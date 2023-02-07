@@ -17,6 +17,7 @@
 
 ## How to Use
 * You can log in and out, once you are logged in you can browse categories, contribute, and review recipes.
+View our demo here: https://drive.google.com/file/d/1cvqbkDKCKNtoBj-70uimrgm13Nv3grHq/view?usp=sharing 
 
 ## How to Contribute
 * You can contribute by adding you own recipes once you have created a login.
