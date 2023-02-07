@@ -1,3 +1,6 @@
+
+
+    <!-- renders the user recipe -->
 <section class="p-10 bg-yellow-200 text-black rounded-lg shadow-lg">
     <h3 class="font-extrabold text-5xl text-center">{{recipe.name}}</h3>
     <h4 class="mt-4 text-center italic font-medium">Contributed by: {{recipe.user.name}}</h4>
@@ -11,11 +14,13 @@
         </div>
     </div>
 
+    <!-- renders the user ingredients of recipe -->
     <div class="mb-10">
         <ul class="font-extrabold text-xl list-disc" id="ingredients">Ingredients: </ul>
         <p class="hidden"  value="1" id="totalIngs">{{recipe.instructions}}</p>
     </div>
 
+    <!-- renders the user instructions of recipe -->
     <div class="mb-10">
         <ul class="font-extrabold text-xl list-disc" id="steps">Instructions: </ul>
         <p class="hidden" value="1" id="totalSteps"></p>
@@ -26,6 +31,7 @@
             <h2 class="font-extrabold text-xl">Rate this Recipe!</h2>
         </div>
         
+        <!-- if user is logged in able to see recipes on profile page -->
         {{#if logged_in}}                            
         <button class="bg-lime-300 border-2 border-black border-single rounded-md px-4" onclick="addReview()" id="addReview">Add a Review</button>            
         {{/if}}
